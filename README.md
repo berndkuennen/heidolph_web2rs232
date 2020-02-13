@@ -31,13 +31,10 @@ The code exposes these interfaces:
 * a REST API which returns json documents
 
 ### Configuration
-* The ESP32 connects to Wifi. Place the credentials for your Wifi network in config.h.
 * The Heidolph stirrer uses 9600 baud and 7E1 as communication parameters. Change this
   in config.h if you want to connect to a device with different needs. Set HWS_DELAY
   to ms for the delay between sending to and reading from the stirrer.
-
-Wifi is configured in an own, git-ignored header file. Set the following in
-wifi.h:
+* The ESP32 connects to Wifi. Place the credentials for your Wifi network in wifi.h:
 ```
 const char *ssid     = "Wifi-name";
 const char *password = "wifi-pass";
@@ -58,6 +55,9 @@ Wiring to the TTL module, pins at ESP32:
 * RX2 -> RX
 * TX2 -> TX
 
+The setup is quite simple and needs just a couple of wires (see [photo](https://raw.githubusercontent.com/berndkuennen/heidolph_web2rs232/master/img/breadboard-setup.jpg "breadboard setup")
+of breadboard setup).
+
 
 ## The commands
 The Heidolph Hei-Connect stirrers support a couple of commands which are
@@ -77,8 +77,9 @@ Here's a small list of the most important commands:
 * IN_PV_3 - read temperature of heating plate
 * IN_PV_5 - read rpm value 
 
-You find a list of available commands in the
-manual of your Heidolph stirrer.
+You find a complete list of available commands in the manual of your Heidolph
+stirrer, e.g. [this one for Hei-Connect stirrers](https://heidolph-instruments.com/documents/operation%20manuals/magnetic%20stirrer/Operation-Manual-Magnetic%20Stirrer-Hei-Standard-Tec-Connect.pdf)
+on pages 27 & 28 (EN) and 67 & 68 (DE), respectively.
 
 
 ## The simple http interface
@@ -144,8 +145,6 @@ The file coffee.py contains some python code which shows an example how to
 communicate via the simple http interface  and thus control the
 stirrer remotely. In the example the stirrer is used to heat some water
 to 97°C before heating and subsequently stirring is switched off again.
-
-
 
 
 

@@ -14,15 +14,13 @@
 #include <WebServer.h>
 #include <ESPmDNS.h>
 
-#include "HardwareSerial.h"	//-- works with ESP32 built-in hardware serial
-#include "config.h"		//-- define serial and wifi settings in separate config file
+#include "HardwareSerial.h"  //-- works with ESP32 built-in hardware serial
+#include "config.h"          //-- define serial and wifi settings in separate config file
 
-/*
- *-- wifi password in own git-ignored file
- * set the following in wifi.h:
- * const char *ssid     = "Wifi-name";
- * const char *password = "wifi-pass";
- *
+/*-- wifi settings in git-ignored wifi.h
+ * set the following:
+ *   const char *ssid     = "Wifi-name";
+ *   const char *password = "wifi-pass";
  */
 #include "wifi.h"
 
