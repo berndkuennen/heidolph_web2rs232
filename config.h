@@ -1,7 +1,6 @@
 /*
  * config.h for heidolph http interface -
- * - define serial and wifi settings here
- * 
+ * - define serial settings here
  */
 
 
